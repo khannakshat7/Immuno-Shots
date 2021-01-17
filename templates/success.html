@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="section-title">
+      <h2 style="color: green;">Booking Successfull</h2>
+
+    </div>
+
+    <div id="map-canvas" hidden></div>
+<form action="{% url 'booking' %}" method="POST" class="col-md-6">
+  {% if msg %}
+  <div class="alert alert-success" role="alert">
+    {{ msg }}
+  </div>
+  {% endif %}
+  {% csrf_token %}
+    <div class="form-row">
+    <div class="col">
+        <br>
+       
+         <label for="inputEmail4"><b>First Name:</b></label> {{first_name}}
+        <br>
+    </div>
+    <div class="col">
+        <br>
+         <label for="inputEmail4"><b>Last Name:</b></label> {{last_name}}
+       <br>
+      <br>
+    </div>
+  </div>
+  <div class="form-row">
+
+    <div class="form-group col-md-6">
+      <label for="inputEmail4"><b>Email:</b></label> {{email}}
+     
+      <br>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4"><b>Phone no:</b></label> {{phone}}
+     
+    </div>
+
+    
+    <div class="form-group col-md-6">
+      <label for="inputAge"><b>Age:</b></label> {{age}}
+     
+      <br>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAge"><b>Gender:</b></label> {{gender}}
+     
+   
+    </div>
+  </div>
+  </div>
+
+  
+ 
+
+  <div class="form-group">
+    <label for="inputAddress"><b>Address:</b></label> {{address}}
+   
+  </div>
+  <div class="form-group">
+      <label for="inputAddress"><b>Vaccination center:</b></label> {{vaccination_center}}
+   
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity"><b>City:</b></label> {{city}}
+     
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState"><b>State:</b></label> {{state}}
+    
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip"><b>Zip:</b></label> {{zip_code}}
+    
+    </div>
+  </div>
+
+   
+  <br>
+  <br>
+
+</form>
+
+
+{% endblock %}

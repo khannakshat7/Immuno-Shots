@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="section-title">
+      <h2>Appointment Booking Form</h2>
+
+    </div>
+
+
+<form action="{% url 'appointment' %}" method="POST" class="col-md-6">
+  {% csrf_token %}
+  {% if msg %}
+  <div class="alert alert-success" role="alert">
+    {{ msg }}
+  </div>
+  {% endif %}
+    <div class="form-row">
+    <div class="col">
+        <br>
+       
+        
+  <div class="form-group">
+      <label for="inputAddress">Vaccination center</label>
+   <select class="custom-select custom-select-md">
+  <option selected>Choose one of the centers</option>
+  <option value="1">All India Institute of Medical Sciences</option>
+  <option value="2">Medanta The Medicity</option>
+  <option value="3">The Christian Hospital</option>
+  <option value="4">Apollo Hospital</option>
+  <option value="6">Fortis Hospital</option>
+  <option value="5">Max Hospital</option>
+</select>
+  </div>
+
+
+  <label for="dateofbirth">Date Of Booking</label>
+<input type="date" name="dateofbirth" class="form-control" id="dateofbirth">
+
+<br>
+
+ <label for="dateofbirth">Time Of Vaccination</label>
+
+<div class="time-picker-container">
+  <input type="radio" name="AppointmentDateTime" id="radio-morning" />
+  <input type="radio" name="AppointmentDateTime" id="radio-afternoon" />
+  <input type="radio" name="AppointmentDateTime" id="radio-evening" />
+  <input type="radio" name="AppointmentDateTime" id="radio-night" />
+  <div class="clock-container">
+    <label for="radio-morning" class="pie pie-morning">
+      <span>Morning</span>
+    </label>
+    <label for="radio-afternoon" class="pie pie-afternoon">
+      <span>Afternoon</span>
+    </label>
+    <label for="radio-night" class="pie pie-night">
+      <span>Night</span>
+    </label>
+    <label for="radio-evening" class="pie pie-evening">
+      <span>Evening</span>
+    </label>
+    
+  </div>
+
+  <h2 class="time-display">
+                            <span class="time-display-inner">
+                                <span>9AM to 12PM</span>
+                                <span>12PM to 3PM</span>
+                                <span>3PM to 6PM</span>
+                                <span>6PM to 9PM</span>
+                            </span>
+                        </h2>
+</div>
+<br>
+<br>
+
+  <button type="submit" class="btn btn-success">Submit</button>
+ 
+  <br>
+  <br>
+</div>
+</div>
+
+</form>
+
+<br>
+<br>
+
+
+
+
+
+{% endblock %}

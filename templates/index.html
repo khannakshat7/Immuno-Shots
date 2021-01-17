@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <!-- ======= HEAD Section ======= -->
+
+  <section id="home" class="about">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-6 pt-4 pt-lg-0">
+
+          <img src="{% static 'assets/img/logo_1.jpg' %}" width="320px">
+          <p style="text-align: left;">
+            <br>
+
+            <h3>Get Vaccinated <br>and Stay Free from COVID-19<br>through Immuno Shots.</h3>
+            <br>
+
+            Immuno Shots is a Web-based application which allows you to book your vaccination center and get Vaccinated in just one click. You can also see the nearby Vaccination centers through the map, and also book 
+            your appointment with our specialized doctors. You can also book an Ambulance if you have any emergency.
+            <br>
+            <br>
+
+          
+          </p>
+
+        </div>
+
+        <div class="col-lg-6">
+        <img src="{% static 'assets/img/head.jpg' %} " class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <!--===== End HEAD Section ====== -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <section id="home" class="about">
+    <div class="section-title">
+      <h2>The Problem</h2>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-6 pt-4 pt-lg-0">
+
+          <img src="{% static 'assets/img/home-2.png' %}" class="img-fluid" height="10px" alt="">
+
+          <br>
+          <br>
+
+
+          </p>
+
+        </div>
+
+        <div class="col-lg-6">
+          <p style="font-size: 2rem;">
+            <li>In India, due to it's huge population it has became very difficult to vaccinate all the people by going to their houses or by calling them on Vaccination centers.</li><br>
+            <li> So, through Immuno Shots we provide vaccination booking services, so that each person gets the chance to get vaccinated as per first come first server basis.</li><br>
+            <li>People can also see their nearby Vaccination centers as per the data collected from our map which is then displayed to their screen. </li><br>
+            <li>If their is any serious case, then people can book an appointment and can have a one on one video call consulting with our specialized doctors and can also book an Ambulance in any emergency or to reach the respective centers.</li>
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+
+<!-- ======= CASES Section ======= -->
+  <div id="cases">
+    <section id="featured" class="featured">
+        <div class="section-title">
+                <h2>Cases</h2>
+                <div class="container" style="width:70%; padding-top:60px;">
+                    <div class="row">
+                        <div class="col-lg-6 mb-6">
+                            <div class="card"
+                                style="box-shadow:0px 10px 6px -8px #FE9F45; border:2px solid #FE9F45; border-radius:40px; padding:15px; margin: 10px;">
+                                <h3 style="color: #003128;">Total Population</h3>
+                                <h5><span id="population">{{ population }}</span></h5>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-lg-6 mb-6">
+                            <div class="card"
+                                style="box-shadow:0px 10px 6px -8px #FE9F45; border:2px solid #FE9F45; border-radius:40px; padding:15px; margin: 10px;">
+                                <h3  style="color: #003128;">Total Cases</h3>
+                                <h5><span id="cases"></span>{{ totalCases }}</h5>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6 mb-6">
+                            <div class="card"
+                                style="box-shadow:0px 10px 6px -8px #FE9F45; border:2px solid #FE9F45; border-radius:40px; padding:15px; margin: 10px;">
+                                <h3 style="color: #003128;">Total Deaths</h3>
+                                <h5><span id="active">{{ totalDeaths }}</span></h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-6">
+                            <div class="card"
+                                style="box-shadow:0px 10px 6px -8px #FE9F45; border:2px solid #FE9F45; border-radius:40px; padding:15px; margin: 10px;">
+                                <h3 style="color: #003128;">Total Recovered</h3>
+                                <h5><span id="recovered"></span>{{ totalRecovered }}</h5>
+                            </div>
+                        </div>
+                    
+                    </div>
+                
+                        
+                    
+                
+                </div>
+
+            </div>
+
+    </section><!-- End CASES Section -->
+
+</div>
+
+
+
+
+
+
+     <!-- ======= MAP Section ======= -->
+     <div id="map">
+    <section id="featured" class="featured">
+        <div class="section-title">
+                <h2>Search nearby centers</h2>
+                <br>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                           <img src="{% static 'assets/img/map01.jpg' %}"class="img-fluid" alt="">
+                           <br>
+                           <br>
+                         
+                           <h5> Look for nearby Vaccination centers through our Maps,<br> which will show you the nearby Vaccination centers <br>around you as per your Live location.
+                        
+                           </h5>
+                           <br>
+                             <a href="{% url 'hospitaldata' %}"><button style=" font-weight: 800;
+                font-size: 13px;
+                display: inline-block;
+                padding: 10px 10px 10px 10px;
+                border-radius: 50px;
+                transition: 0.5s;
+                background:#FE9F45;
+                border-style: none;
+                color: #000;">Find Here</button></a>
+                        </div>
+                       
+                    </div>
+                    <br>
+                    <br>
+                   
+                
+                        
+                    
+                
+                </div>
+
+            </div>
+
+    </section><!-- End MAP Section -->
+     </div>
+
+
+
+
+
+ <!-- ======= BOOKING FORM Section ======= -->
+<div id="bookings">
+  <section id="home" class="about">
+       <div class="section-title">
+      <h2>Vaccination Centers</h2>
+
+    </div>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-6 pt-4 pt-lg-0">
+
+          
+          <p style="text-align: left;">
+            <br>
+
+            <h3>Have COVID-19 Symptoms?<br> Don't worry, Book your vaccine here.</h3>
+            <br>
+
+           Select your nearby Vaccination center, Fill up your details, Attach your COVID report and boom, your slot is booked!
+
+            <br>
+            <br>
+
+            <a href="{% url 'hospitaldata' %}"><button style=" font-weight: 800;
+                font-size: 13px;
+                display: inline-block;
+                padding: 10px 10px 10px 10px;
+                border-radius: 50px;
+                transition: 0.5s;
+                background:#FE9F45;
+                border-style: none;
+                color: #000;">See Centers</button></a> 
+                           
+                           <a href="{% url 'booking' %}"><button style=" font-weight: 800;
+                font-size: 13px;
+                display: inline-block;
+                padding: 10px 10px 10px 10px;
+                border-radius: 50px;
+                transition: 0.5s;
+                background:#FE9F45;
+                border-style: none;
+                color: #000;">Book Now</button></a>
+          </p>
+
+        </div>
+
+        <div class="col-lg-6">
+          <img src="{% static 'assets/img/home-3.png' %} " class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+</div>
+
+  <!--===== End BOOKING FORM Section ====== -->
+<div id="emergency">
+
+
+  <section id="featured" class="featured">
+        <div class="section-title">
+                <h2>Need help</h2>
+                <div class="container" style="width:70%; padding-top:60px;">
+                    <div class="row">
+                        <div class="col-lg-6 mb-6">
+                            <img src="{% static 'assets/img/doctor.jpg' %} " class="img-fluid" alt="">
+                            <BR>
+                                 <BR>
+                                     <BR> <BR>
+                            <h5>DOCTOR</h5><br>
+                            <br>
+                            <h5>Have COVID symptoms? Get it checked here and<br> have one one one meet with the doctors.</h5>
+                             <a href="https://meet.jit.si/doctor"><button style=" font-weight: 800;
+                font-size: 13px;
+                display: inline-block;
+                padding: 10px 10px 10px 10px;
+                border-radius: 50px;
+                transition: 0.5s;
+                background:#FE9F45;
+                border-style: none;
+                color: #000;">Meet Now</button></a>
+                        </div>
+                        <div class="col-lg-6 mb-6">
+                           <img src="{% static 'assets/img/ambulance.jpg' %}" style="padding-top: 40px;" class="img-fluid" alt="">
+                           <br> <BR> <BR> <BR> 
+                           <H5>AMBULANCE</H5><br>
+                           <br>
+                           <h5>Have any Emergency? Call an Ambulance.</h5>
+                            <a href="tel:123-456-7890"><button style=" font-weight: 800;
+                font-size: 13px;
+                display: inline-block;
+                padding: 10px 10px 10px 10px;
+                border-radius: 50px;
+                transition: 0.5s;
+                background:#FE9F45;
+                border-style: none;
+                color: #000;">Call Now</button></a>
+                        </div>
+                    
+                    </div>
+                    <br>
+                    <br>
+                    
+                </div>
+
+            </div>
+
+    </section><!-- End BOOKINGS Section -->
+
+</div>
+    
+  
+
+{% endblock %}

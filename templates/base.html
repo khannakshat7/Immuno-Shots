@@ -1,0 +1,311 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="{% static 'assets/img/favicon.ico' %}" />
+  <title>Immuno Shots💉
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+      <div class="logo mr-auto">
+        <h1>
+          <!-- <img src="assets/img/Icon.png" style="margin-top: -10px;"> -->
+          <img src="{% static 'assets/img/Icon.png' %}" style="margin-top: -15px;" alt="">
+          <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo_1.jpg' %}" style="margin-top: -10px;" alt=""></a>
+        </h1>
+      </div>
+
+      <!--NAVBAR-->
+
+      <nav class="nav-menu d-none d-lg-block ml-auto">
+        <ul>
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'hospitaldata' %}">Map</a></li>
+          <li><a href="{% url 'booking' %}">Bookings</a></li>
+          <li><a href="{% url 'appointment' %}">Appointment</a></li>
+          <li><a href="#emergency">Emergency</a></li>
+          <li><a href="#cases">Cases</a></li>
+          <li style=" font-weight: 800;
+                font-size: 13px;
+                display: inline-block;
+                padding: 1px 1px 1px 1px;
+                border-radius: 50px;
+                transition: 0.5s;
+                background: #FE9F45;
+                border-style: none;
+                color: #fff;"><a href="#">Welcome</a></li>
+
+        </ul>
+      </nav>
+
+      <!-- NAVBAR -->
+    </div>
+  </header>
+
+ 
+
+  <br>
+  <br>
+  <br>
+  <br>
+  {% block content %}
+
+    {% endblock %}
+<!-- ======= Footer ======= -->
+<section id="contact">
+    <div class="section-title">
+      <h2>Contact</h2>
+
+    </div>
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 footer-info">
+              <h3>
+                <img src="{% static 'assets/img/logo_1.jpg' %}" style="width: 130px; margin-left: 80px;" />
+              </h3>
+             
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li>
+                  <i class="ion-ios-arrow-right"></i> <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                  <i class="ion-ios-arrow-right"></i> <a href="{% url 'hospitaldata' %}">Maps</a>
+                </li>
+                <li>
+                  <i class="ion-ios-arrow-right"></i> <a href="{% url 'booking' %}">Bookings</a>
+                </li>
+                <li>
+                  <i class="ion-ios-arrow-right"></i> <a href="#emergency">Emergency</a>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-contact">
+              <h4>Contact Us</h4>
+              <p>
+                <b>Immuno Shots- </b>Frontline Logistics
+                P.O. Box: 314
+                Office No: 4, Floor 1, Tower 1, Akash Tower, Delhi, India.
+                <br />
+
+                <strong>Phone:</strong>+91 8959631088<br />
+                <strong>Email:</strong>immunoshots@india.com<br />
+              </p>
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          Made with ❤️️ by <strong><a href="https://linktr.ee/Ping_Unnati" style="color: #FE9F45;">Unnati</a> & <a
+              href="https://linktr.ee/akshatkhanna" style="color: #FE9F45;">Akshat</a></strong>.
+        </div>
+      </div>
+    </footer>
+  </section>
+  <!-- End Footer -->
+  </section>
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script>
+    /* Note: This example requires that you consent to location sharing when
+     * prompted by your browser. If you see the error "Geolocation permission
+     * denied.", it means you probably did not give permission for the browser * to locate you. */
+    let pos;
+    let map;
+    let bounds;
+    let infoWindow;
+    let currentInfoWindow;
+    let service;
+    let infoPane;
+    function initMap() {
+      // Initialize variables
+      bounds = new google.maps.LatLngBounds();
+      infoWindow = new google.maps.InfoWindow;
+      currentInfoWindow = infoWindow;
+      /* TODO: Step 4A3: Add a generic sidebar */
+  
+      // Try HTML5 geolocation
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map = new google.maps.Map(document.getElementById('map-canvas'), {
+            center: pos,
+            zoom: 15
+          });
+          bounds.extend(pos);
+  
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          infoWindow.open(map);
+          map.setCenter(pos);
+  
+          /* TODO: Step 3B2, Call the Places Nearby Search */
+          // Call Places Nearby Search on user's location
+          getNearbyPlaces(pos);
+        }, () => {
+          // Browser supports geolocation, but user has denied permission
+          handleLocationError(true, infoWindow);
+        });
+      } else {
+        // Browser doesn't support geolocation
+        handleLocationError(false, infoWindow);
+      }
+    }
+  
+    // Handle a geolocation error
+    function handleLocationError(browserHasGeolocation, infoWindow) {
+      // Set default location to Sydney, Australia
+      pos = { lat: -33.856, lng: 151.215 };
+      map = new google.maps.Map(document.getElementById('map-canvas'), {
+        center: pos,
+        zoom: 15
+      });
+  
+      // Display an InfoWindow at the map center
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+        'Geolocation permissions denied. Using default location.' :
+        'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(map);
+      currentInfoWindow = infoWindow;
+  
+      /* TODO: Step 3B3, Call the Places Nearby Search */
+      // Call Places Nearby Search on the default location
+      getNearbyPlaces(pos);
+    }
+  
+    /* TODO: Step 3B1, Call the Places Nearby Search */
+    // Perform a Places Nearby Search Request
+    function getNearbyPlaces(position) {
+      let request = {
+        location: position,
+        fields: ['name', 'adr_address', 'formatted_phone_number','geometry'],
+        rankBy: google.maps.places.RankBy.DISTANCE,
+        keyword: 'hospital'
+      };
+  
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, nearbyCallback);
+    }
+  
+    // Handle the results (up to 20) of the Nearby Search
+    function nearbyCallback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        createMarkers(results);
+      }
+    }
+  
+    /* TODO: Step 3C, Generate markers for search results */
+    // Set markers at the location of each place result
+    let tabledata = []
+    function createMarkers(places) {
+      let i=1;
+      places.forEach(place => {
+        table1 = {
+          sno: i,
+          name: place.name,
+          address: place.vicinity
+        }
+        tabledata.push(table1)
+        i+=1
+        let marker = new google.maps.Marker({
+          position: place.geometry.location,
+          map: map,
+          title: place.name
+        });
+  
+        /* TODO: Step 4B: Add click listeners to the markers */
+  
+        // Adjust the map bounds to include the location of this marker
+        bounds.extend(place.geometry.location);
+      });
+      /* Once all the markers have been placed, adjust the bounds of the map to
+       * show all the markers within the visible area. */
+      map.fitBounds(bounds);
+      try {
+        addselect(tabledata);
+        }
+        catch(err) {}
+      try{
+          loadTableData(tabledata);
+      }
+      catch(err) {}
+    }
+  
+    function loadTableData(items) {
+      const table = document.getElementById("testBody");
+      items.forEach( item => {
+        let row = table.insertRow();
+        let sno = row.insertCell(0);
+        sno.innerHTML = item.sno;
+        let name = row.insertCell(1);
+        name.innerHTML = item.name;
+        let address = row.insertCell(2);
+        address.innerHTML = item.address;
+      });
+    }
+    console.log(tabledata)
+
+    function addselect(selectdata){
+        const select=document.getElementById('center');
+        selectdata.forEach( item => {
+            let option = document.createElement("option");
+            option.value = item.name;
+            option.innerHTML = item.name;
+            select.add(option);
+        });
+    }
+  </script>
+  
+  <!-- TODO: Step 3A, Load the Places Library -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9wmgLBcovDDe5x25LL93JKtT1ugPIlLQ&libraries=places&callback=initMap">
+  </script>
+</body>
+
+</html>

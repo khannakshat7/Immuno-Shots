@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+   <div class="section-title">
+      <h2>Vaccination Center Details</h2>
+
+    </div>
+    <div id="map-canvas"></div>
+    <div class="my-4">
+      <table class="table"> 
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Sr no.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address🏢</th>
+          </tr>
+        </thead>
+        <tbody id="testBody"></tbody>
+      </table>
+    </div>
+    
+    
+{% endblock %}
